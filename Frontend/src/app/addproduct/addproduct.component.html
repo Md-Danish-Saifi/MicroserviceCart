@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first my-5">
+      <!-- <img src="../assets/shoping.png" style="width: 100px; height: 100px;" id="icon" alt="User Icon" /> -->
+    </div>
+
+    <!-- Login Form -->
+    <form>
+        <div class="form-group mx-5 text-left">
+          <label for="exampleFormControlInput1">Title</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="enter title" [(ngModel)]="info.title" name="title">
+          <label for="exampleFormControlInput1">Price</label>
+          <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="enter price"[(ngModel)]="info.price" name="price">
+          <label for="exampleFormControlInput1">Description</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="enter description"[(ngModel)]="info.description" name="description">
+          <label for="exampleFormControlInput1">Entet Image link</label>
+          <p class="alert-warning" style="font-size: 10px;"> *Please use images of 600*600 size</p>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="enter image url"[(ngModel)]="info.image" name="image">
+        
+          <button type="button" class="btn btn-primary btn-lg btn-block my-3" (click)="addProd()">Add Now</button>
+
+        </div>
+
+
+      </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/home">back to home</a>
+    </div>
+
+  </div>
+</div>

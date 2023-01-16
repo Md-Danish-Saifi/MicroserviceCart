@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="container">
+  
+  <div class="row mt-2 justify-content-left">
+    <div
+      class="col-12 col-md-6 col-lg-4 mt-2"
+      *ngFor="let p of products; let i = index"
+    >
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]="p.image" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{p.title}}</h5>
+              <p class="card-text">{{p.description}}.</p>
+              <p class="card-text"> ₹/ {{p.price}}</p>
+              <button  class="btn btn-primary" (click)="addProdToCart(p)">Add to cart</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

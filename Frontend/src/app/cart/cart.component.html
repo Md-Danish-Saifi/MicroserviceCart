@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="callout" *ngIf="products.length === 0">
+    <div class="callout-header">Nothing is in Cart</div>
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+    <div class="callout-container">
+      <p>Please add some items to cart. Add items <a href="/home">here </a></p>
+    </div>
+  </div>
+<div class="container pb-5 mb-2"  *ngIf="products.length !== 0">
+
+       <!-- Cart Item-->
+    <div class="cart-item d-md-flex justify-content-between mt-5"  *ngFor="let c of products">
+        <span class="remove-item" (click)="removeFromCart(c.id)"><i class="fa fa-times"></i></span>
+        <div class="px-3 my-3">
+            <a class="cart-item-product" href="#">
+                <div class="cart-item-product-thumb"><img [src]="c.image" alt="Product"></div>
+                <div class="cart-item-product-info">
+                    <h4 class="cart-item-product-title">{{c.title}}</h4><span><strong>Description:</strong> {{c.description}}</span><span><strong>price:</strong> {{c.price}}</span>
+                </div>
+            </a>
+        </div>
+        <div class="px-3 my-3 text-center">
+            <div class="cart-item-label">Quantity</div>
+            <div class="count-input">
+                <select class="form-control" (change)="calculateAmount($event,c.id)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+        <div class="px-3 my-3 text-center">
+            <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">₹ {{c.totalPrice ? c.totalPrice : c.price}}</span>
+        </div>
+    </div>
+
+    
+    <!-- Coupon + Subtotal-->
+    <div class="d-sm-flex justify-content-between align-items-center text-center text-sm-left">
+        
+    <div></div>
+        <div class="py-2"><span class="d-inline-block align-middle text-sm text-muted font-weight-medium text-uppercase mr-2">Subtotal:</span><span class="d-inline-block align-middle text-xl font-weight-medium">{{total}}</span></div>
+    </div>
+    <!-- Buttons-->
+    <hr class="my-2">
+    <div class="row pt-3 pb-5 mb-2 justify-content-center" >
+        <div class="col-sm-6 mb-3"><a class="btn btn-style-1 btn-primary btn-block" href="checkout-address.html"><i class="fe-icon-credit-card"></i>&nbsp;Checkout</a></div>
+    </div>
+</div>

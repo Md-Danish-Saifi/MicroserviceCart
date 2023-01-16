@@ -1,0 +1,31 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first my-5">
+      <!-- <img src="../assets/shoping.png" id="icon" alt="User Icon" /> -->
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <div class="form-group mx-5 text-left">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="enter email" [(ngModel)]="userInfo.email" name="email">
+        <label for="exampleFormControlInput1">Password</label>
+        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="enter password" [(ngModel)]="userInfo.password" name="password">
+        <button type="button" class="btn btn-primary btn-lg btn-block my-3"  (click)="logIn()">Login</button>
+
+      </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/register">Don't have account?</a>
+    </div>
+
+  </div>
+</div>
